@@ -1,6 +1,6 @@
 '''
 AUTHOR:         @jharrisong830
-VERSION:        0.1
+VERSION:        0.2
 DATE:           12/29/22
 DESCRIPTION:    Main file for text-based game.
 '''
@@ -8,7 +8,7 @@ DESCRIPTION:    Main file for text-based game.
 import player
 
 def player_turn(player: player.Player, opponent: player.Player):
-    print(player.name+"'s Turn:")
+    print("\n"+player.name+"'s Turn:\n")
     print(player)
     print("CHOOSE A MOVE (type move name in the command-prompt):")
     for action in player.moves:
@@ -38,8 +38,6 @@ def battle(player: player.Player, opponent: player.Player):
         
 
 if __name__=="__main__":
-    p1=player.Player(10, 5)
-    enemy=player.Player(2, 0, name="Brute")
     print("Welcome to TEXT-BASED GAME (v 0.1)")
     print("This is a very early stage of a project I'm working on.")
     print("This version only contains a simple battle sequence. Formatting and display specs are subject to change.")
@@ -48,6 +46,8 @@ if __name__=="__main__":
         if option=="s" or option=="exit":
             break
     if option=="s":
+        p1=player.Player(10, 5)
+        enemy=player.Player(2, 0, name="Brute")
         battle(p1, enemy)
     print("Thank you for trying TEXT-BASED GAME (v 0.1)! Check back soon for more updates and features!")
     print("-john")
