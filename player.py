@@ -24,7 +24,7 @@ class Player:
 
         self.moves=moveset.DEFAULT_MOVES
 
-        self.items={}
+        self.items={} #TODO implement items
     
     def __str__(self):
         result=self.name+"\n"

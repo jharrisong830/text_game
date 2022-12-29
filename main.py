@@ -49,5 +49,5 @@ if __name__=="__main__":
         p1=player.Player(10, 5)
         enemy=player.Player(2, 0, name="Brute")
         battle(p1, enemy)
-    print("Thank you for trying TEXT-BASED GAME (v 0.1)! Check back soon for more updates and features!")
+    print("Thank you for trying TEXT-BASED GAME (v 0.2)! Check back soon for more updates and features!")
     print("-john")
