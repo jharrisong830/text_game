@@ -1,6 +1,6 @@
 '''
 AUTHOR:         @jharrisong830
-VERSION:        0.2
+VERSION:        0.3
 DATE:           12/29/22
 DESCRIPTION:    Definition of moves and the Move class.
 '''
@@ -16,7 +16,7 @@ class Move:
         self.df_add=df_add
     
     def __str__(self):
-        result=self.name+" ("+self.mnemonic+") - "+self.description
+        result=self.name+" ('"+self.mnemonic+"') - "+self.description
         if self.dmg_low!=0 or self.dmg_high!=0:
             result+="\n\tDMG: "+str(self.dmg_low)+" - "+str(self.dmg_high)
         if self.mp_used!=0: result+="\n\tMP COST: "+str(self.mp_used)

@@ -1,0 +1,25 @@
+//INITIAL DRAFT OF A SMALL STORY
+//FOR USE IN v 0.3 ONLY 
+//
+Welcome to **text_game** (working title)! A simple (and currently in-development) adventure text game.
+\n
+\n
+...
+
+
+<PLAYER_NAME>, your mission in this story is to defeat a demo enemy in order to save the world!
+\n
+(Yes, I know, this is a rather lame story, but it's just a demo, and a free one at that.)
+\n
+\n
+Oh, look! Here comes a monster now! Lets see if you can beat him!
+\n
+\n
+...
+
+
+ENEMY demo_monster 6 0
+
+Congrats <PLAYER_NAME> on beating the monster! And thanks for trying the demo of **text_game** (working title)!
+\n
+Check back often for new content! :)

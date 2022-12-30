@@ -1,7 +1,7 @@
 # text_game
 An evolving project that aims to create a text-based adventure with a detailed battle system. Currently on v 0.2.
 ## Upcoming Features
-- Creating a better UX using [Typer](https://typer.tiangolo.com/)
+- Clearer user interface
 - Consumable items to use during battle
 - More (unlockable) moves
 - A simple demo story to be run in the main file

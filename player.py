@@ -1,6 +1,6 @@
 '''
 AUTHOR:         @jharrisong830
-VERSION:        0.2
+VERSION:        0.3
 DATE:           12/29/22
 DESCRIPTION:    Player class and methods.
 '''
@@ -9,7 +9,9 @@ import moveset
 import random
 
 class Player:
-    def __init__(self, max_hp: int, max_mp: int, max_df: int=0, df: int=0, name: str="NEW_GAME"):
+    def __init__(self, name: str, max_hp: int, max_mp: int, max_df: int=0, df: int=0):
+        self.name=name
+        
         self.max_hp=max_hp
         self.hp=self.max_hp
 
@@ -19,39 +21,42 @@ class Player:
         self.max_df=max_df
         self.df=df
 
-        self.name=name
-        if self.name=="NEW_GAME": self.name=input("Enter your character's name: ")
 
         self.moves=moveset.DEFAULT_MOVES
 
         self.items={} #TODO implement items
     
-    def __str__(self):
-        result=self.name+"\n"
+    def __str__(self, with_name=True):
+        result=""
+        if with_name: result+=self.name+"\n"
         result+="HP: "+str(self.hp)+"\n"
         result+="MP: "+str(self.mp)+"\n"
         result+="DF: "+str(self.df)+"\n"
         return result
     
     def deal_move(self, move: moveset.Move, recipient):
+        result=""
         if move.mnemonic=="no":
-            print(self.name+" did nothing!")
+            result+=self.name+" did nothing!\n"
         else:
-            print(self.name+" used "+move.name)
+            result+=self.name+" used "+move.name+"\n"
             damage=int(round(random.uniform(move.dmg_low, move.dmg_high)))-recipient.df
             recipient.df=recipient.max_df
             if damage<0:
                 damage=0
-                print(recipient.name+" lost 0 HP")
+                result+=recipient.name+" lost 0 HP\n"
             if damage!=0:
                 recipient.hp-=damage
-                print(recipient.name+" lost "+str(damage)+" HP")
+                result+=recipient.name+" lost "+str(damage)+" HP\n"
             if move.mp_used!=0:
                 self.mp-=move.mp_used
-                print(self.name+" used "+str(move.mp_used)+" MP")
+                result+=self.name+" used "+str(move.mp_used)+" MP\n"
             if move.df_add!=0:
                 self.df+=move.df_add
-                print(self.name+" gained "+str(move.df_add)+" DF for this turn")
+                result+=self.name+" gained "+str(move.df_add)+" DF for this turn\n"
+            result+="\n"+self.name+"'s Current Stats:\n"
+            result+=self.__str__(with_name=False)
+        return result
     
     def is_dead(self):
         return True if self.hp<=0 else False
