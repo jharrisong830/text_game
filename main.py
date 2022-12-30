@@ -8,12 +8,11 @@ DESCRIPTION:    Main file for text-based game.
 import player
 import os
 import time
-import ast
 
 def animated_print(str_out):
     for char in str_out:
         print(char, end="", flush=True)
-        time.sleep(min(0.00001, 1/len(str_out)))
+        time.sleep(0.00000000001)
 
 def player_turn(player: player.Player, opponent: player.Player):
     while True:
@@ -94,10 +93,3 @@ if __name__=="__main__":
         os.system("cls")
         p1=player.Player(name, 10, 5)
         process_story(story, p1)
-    #     animated_print("Enter your character's name: ")
-    #     name=input()
-    #     os.system("cls")
-    #     p1=player.Player(name, 10, 5)
-    #     enemy=player.Player("Brute", 2, 0)
-    #     battle(p1, enemy)
-    # animated_print("Thank you for trying TEXT-BASED GAME (v 0.3)! Check back soon for more updates and features!\n-john")
