@@ -1,5 +1,5 @@
 //INITIAL DRAFT OF A SMALL STORY
-//FOR USE IN v 0.3 ONLY 
+//FOR USE IN v 0.3 and above ONLY 
 //
 Welcome to **text_game** (working title)! A simple (and currently in-development) adventure text game.
 \n

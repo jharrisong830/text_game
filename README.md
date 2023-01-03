@@ -1,12 +1,24 @@
 # text_game
 An evolving project that aims to create a text-based adventure with a detailed battle system. Currently on v 0.2.
 ## Upcoming Features
+- More stats, attributes, and complexity in battles
 - Clearer user interface
 - Consumable items to use during battle
 - More (unlockable) moves
 - More expansive stories with multiple battles
 - ...even more soon!
 ## Changelog
+### v 0.4 (01/03/23)
+- Colors for different attributes! (using the Python `colorama` module)
+    - Red -> damage
+    - Blue -> defense
+    - Light cyan -> magic
+    - Green -> health
+- Added a "type 'h' for help" feature in the battle sequence
+    - Descriptions of moves no longer displayed by default, only displayed in help mode
+    - Reduces the time it takes to print all moves
+    - Will experiment with other methods of reducing print time in future versions
+- Minor formatting changes
 ### v 0.3 (12/29/22)
 - Use of `os.system("cls")` to clear the command line after certain events (to prevent clutter)
 - Added stalling functionality, where the program is stalled until the command line receives keyboard input

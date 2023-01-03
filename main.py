@@ -1,7 +1,8 @@
 '''
+NAME:           main.py
 AUTHOR:         @jharrisong830
-VERSION:        0.3
-DATE:           12/29/22
+VERSION:        0.4
+DATE:           01/03/23
 DESCRIPTION:    Main file for text-based game.
 '''
 
@@ -18,11 +19,16 @@ def player_turn(player: player.Player, opponent: player.Player):
     while True:
         animated_print(player.name+"'s Turn\n\n")
         animated_print(str(player)+"\n")
-        animated_print("CHOOSE A MOVE (type move name in the command-prompt):\n\n")
+        animated_print("CHOOSE A MOVE (type 'h' for help):\n\n")
         for action in player.moves:
             animated_print(str(player.moves[action])+"\n")
         choice=input()
         os.system("cls")
+        if choice=='h':
+            for action in player.moves:
+                animated_print(player.moves[action].__str__(help=True))
+            choice=input()
+            os.system("cls")
         if choice in player.moves: break
         animated_print("Error: '"+choice+"' is not a valid move. Please try again.\n")
         animated_print("\nPress any key to continue...")
@@ -77,7 +83,8 @@ def process_story(story, ply: player.Player):
         
 
 if __name__=="__main__":
-    animated_print("Welcome to TEXT-BASED GAME (v 0.3)\n")
+    os.system("cls")
+    animated_print("Welcome to TEXT-BASED GAME (v 0.4)\n")
     animated_print("This is a very early stage of a project I'm working on.\n")
     animated_print("This version only contains a simple battle sequence. Formatting and display specs are subject to change.\n")
     while True:

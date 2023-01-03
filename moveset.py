@@ -1,9 +1,12 @@
 '''
+NAME:           moveset.py
 AUTHOR:         @jharrisong830
-VERSION:        0.3
-DATE:           12/29/22
+VERSION:        0.4
+DATE:           01/03/23
 DESCRIPTION:    Definition of moves and the Move class.
 '''
+
+from colorama import Fore
 
 class Move:
     def __init__(self, name: str, mnemonic: str, description: str, dmg_low: int, dmg_high: int, mp_used: int=0, df_add: int=0):
@@ -15,12 +18,13 @@ class Move:
         self.mp_used=mp_used
         self.df_add=df_add
     
-    def __str__(self):
-        result=self.name+" ('"+self.mnemonic+"') - "+self.description
+    def __str__(self, help=False):
+        result=self.name+" ('"+self.mnemonic+"')"
+        if help: result+=" - "+self.description
         if self.dmg_low!=0 or self.dmg_high!=0:
-            result+="\n\tDMG: "+str(self.dmg_low)+" - "+str(self.dmg_high)
-        if self.mp_used!=0: result+="\n\tMP COST: "+str(self.mp_used)
-        if self.df_add!=0: result+="\n\tDF+: "+str(self.df_add)
+            result+=Fore.RED+"\n\tDMG: "+str(self.dmg_low)+" - "+str(self.dmg_high)+Fore.RESET
+        if self.mp_used!=0: result+=Fore.LIGHTCYAN_EX+"\n\tMP COST: "+str(self.mp_used)+Fore.RESET
+        if self.df_add!=0: result+=Fore.BLUE+"\n\tDF+: "+str(self.df_add)+Fore.RESET
         result+="\n"
         return result
 
