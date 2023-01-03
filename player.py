@@ -46,7 +46,7 @@ class Player:
         else:
             result+=self.name+" used "+move.name+"\n"
             damage=int(round(random.uniform(move.dmg_low, move.dmg_high)))-recipient.df
-            recipient.df=recipient.max_df
+            recipient.df=recipient.min_df
             if damage<0:
                 damage=0
                 result+=recipient.name+" lost 0 HP\n"
