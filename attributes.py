@@ -15,12 +15,4 @@ class Attribute:
         self.color=color
     
     def __str__(self):
-        return self.color+self.name+": "+self.value+Fore.RESET+"\n"
-    
-
-
-
-hp=Attribute("HP", color=Fore.GREEN)
-mp=Attribute("MP", color=Fore.LIGHTCYAN_EX)
-
-BASE_ATTRIBUTES=set(hp, mp)
+        return self.color+self.name+": "+str(self.value)+Fore.RESET+"\n"
