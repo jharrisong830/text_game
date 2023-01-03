@@ -32,7 +32,7 @@ An evolving project that aims to create a text-based adventure with a detailed b
     - `\n`: prints a new line (lines in the text file do not create new lines)
     - `ENEMY <name: str> <max_hp: int> <max_mp: int>`: indicates that a new enemy should be created with the specified attributes, and a battle with that enemy will be started
     - All other lines are printed to the command line
-- Changes made to [`player.py`](player.py) and ['moveset.py](moveset.py) to enable compatability with `animated_print()`
+- Changes made to [`player.py`](player.py) and [`moveset.py`](moveset.py) to enable compatability with `animated_print()`
 ### v 0.2 (12/29/22)
 - Added variable damage (selects a random floating point number within an integer range, and rounding the result to the nearest integer)
 - Added a simple defense move and capability of defense mechanics
