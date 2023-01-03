@@ -1,5 +1,5 @@
 # text_game
-An evolving project that aims to create a text-based adventure with a detailed battle system. Currently on v 0.2.
+An evolving project that aims to create a text-based adventure with a detailed battle system. Currently on v 0.4.
 ## Upcoming Features
 - More stats, attributes, and complexity in battles
 - Clearer user interface
