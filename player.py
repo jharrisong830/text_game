@@ -24,9 +24,13 @@ class Player:
         self.min_df=min_df
         self.df=Attribute("DF", value=min_df, color=Fore.BLUE)
 
+        self.atk=Attribute("ATK", color=Fore.RED)
+
         self.moves=moveset.DEFAULT_MOVES
 
         self.items={} #TODO implement items
+
+        self.stats=set()
     
     def __str__(self, with_name=True):
         result=""
@@ -36,7 +40,7 @@ class Player:
             result=result[:-1]
             result+=Fore.RED+" (DANGER)"+Fore.RESET+"\n"
         result+=str(self.mp)
-        result+=str(self.df)
+        if self.df.value!=0: result+=str(self.df)
         return result
     
     def deal_move(self, move: moveset.Move, recipient):

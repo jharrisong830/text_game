@@ -7,6 +7,7 @@ DESCRIPTION:    Definition of moves and the Move class.
 '''
 
 from colorama import Fore
+import stats
 
 class Move:
     def __init__(self, name: str, mnemonic: str, description: str, dmg_low: int, dmg_high: int, mp_used: int=0, df_add: int=0):
@@ -34,3 +35,6 @@ nothing_move=Move("Do Nothing", "no", "Do absolutely nothing this turn.", 0, 0)
 shield_move=Move("Shield", "shd", "Put up your shield to defend for one turn.", 0, 0, df_add=5)
 
 DEFAULT_MOVES={"swr": sword_move, "fire": fire_move, "no": nothing_move, "shd": shield_move}
+
+class StatMove:
+    def __init__(self, )
