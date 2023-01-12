@@ -37,4 +37,17 @@ shield_move=Move("Shield", "shd", "Put up your shield to defend for one turn.", 
 DEFAULT_MOVES={"swr": sword_move, "fire": fire_move, "no": nothing_move, "shd": shield_move}
 
 class StatMove:
-    def __init__(self, )
+    def __init__(self, name: str, mnemonic: str, description: str, stat: type, value: int, turns: int):
+        self.name=name
+        self.mnemonic=mnemonic
+        self.description=description
+        self.stat=stats.
+    def __str__(self, help=False):
+        result=self.name+" ('"+self.mnemonic+"')"
+        if help: result+=" - "+self.description
+        if self.dmg_low!=0 or self.dmg_high!=0:
+            result+=Fore.RED+"\n\tDMG: "+str(self.dmg_low)+" - "+str(self.dmg_high)+Fore.RESET
+        if self.mp_used!=0: result+=Fore.LIGHTCYAN_EX+"\n\tMP COST: "+str(self.mp_used)+Fore.RESET
+        if self.df_add!=0: result+=Fore.BLUE+"\n\tDF+: "+str(self.df_add)+Fore.RESET
+        result+="\n"
+        return result
